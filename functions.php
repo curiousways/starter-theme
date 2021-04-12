@@ -81,9 +81,9 @@ class StarterSite extends Timber\Site {
 	 * @param string $context context['this'] Being the Twig's {{ this }}.
 	 */
 	public function add_to_context( $context ) {
-		$context['foo']   = 'bar';
-		$context['stuff'] = 'I am a value set in your functions.php file';
-		$context['notes'] = 'These values are available everytime you call Timber::context();';
+		// $context['foo']   = 'bar';
+		// $context['stuff'] = 'I am a value set in your functions.php file';
+		// $context['notes'] = 'These values are available everytime you call Timber::context();';
 		$context['menu']  = new Timber\Menu();
 		$context['site']  = $this;
 		return $context;
@@ -147,10 +147,10 @@ class StarterSite extends Timber\Site {
 	 *
 	 * @param string $text being 'foo', then returned 'foo bar!'.
 	 */
-	public function myfoo( $text ) {
-		$text .= ' bar!';
-		return $text;
-	}
+	// public function myfoo( $text ) {
+	// 	$text .= ' bar!';
+	// 	return $text;
+	// }
 
 	/** This is where you can add your own functions to twig.
 	 *
@@ -158,7 +158,7 @@ class StarterSite extends Timber\Site {
 	 */
 	public function add_to_twig( $twig ) {
 		$twig->addExtension( new Twig\Extension\StringLoaderExtension() );
-		$twig->addFilter( new Twig\TwigFilter( 'myfoo', array( $this, 'myfoo' ) ) );
+		// $twig->addFilter( new Twig\TwigFilter( 'myfoo', array( $this, 'myfoo' ) ) );
 		return $twig;
 	}
 
